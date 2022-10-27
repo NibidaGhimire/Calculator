@@ -4,11 +4,14 @@
     font-weight: normal;
 }
 
+
+
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, rgb(56, 152, 255,100),rgb(255, 158, 229,100));
+    background: linear-gradient(to right, rgb(135, 135, 135), rgb(18, 18, 18));
 }
+
 
 .calculator-grid{
     display: grid;

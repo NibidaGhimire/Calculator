@@ -23,7 +23,7 @@ class Calculator{
     }
 
     chooseOperation(operation){
-        if(this.previousOperandTextElement!==""){
+        if(this.previousOperandTextElement!=="" &&operation!=="%"){
             this.compute();
         }
         this.operation=operation
@@ -48,7 +48,10 @@ class Calculator{
                 break   
             case "÷":
                 computation=previous/current
-                break         
+                break  
+            case "%":
+                computation=current/100
+                break       
             default:
                 return    
         }
@@ -60,7 +63,12 @@ class Calculator{
 
     update(){
         this.currentOperandElement.innerText=this.currentOperand
-        this.previousOperandElement.innerText=this.previousOperand
+        this.operation!==undefined?
+            this.previousOperandElement.innerText=
+            `${this.previousOperand}${this.operation}`
+            :
+            this.previousOperandElement.innerText=this.previousOperand
+        
     }
 }
 
