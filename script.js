@@ -48,10 +48,7 @@ class Calculator{
                 break   
             case "÷":
                 computation=previous/current
-                break  
-            case "%":
-                computation=current/100
-                break       
+                break      
             default:
                 return    
         }
