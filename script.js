@@ -23,7 +23,11 @@ class Calculator{
     }
 
     chooseOperation(operation){
-        if(this.previousOperandTextElement!=="" &&operation!=="%"){
+        if(this.currentOperand==="" ){
+            return
+        }
+
+        if(this.previousOperand!=="" ){
             this.compute();
         }
         this.operation=operation
@@ -32,10 +36,12 @@ class Calculator{
     }
 
     compute(){
-        if(this.currentOperand===""){return}
+        
         let computation
-        const previous=this.previousOperand
-        const current=this.currentOperand
+        const previous=parseFloat(this.previousOperand);
+        const current=parseFloat(this.currentOperand);
+        
+        if(isNaN(previous)||isNaN(current)){return}
         switch(this.operation){
             case "+":
                 computation=previous+current
